@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Dashboard</h2>
+        <p id="welcome-message">Welcome, <span id="username"></span>!</p>
+        <button id="logout-btn">Logout</button>
+    </div>
+    <script>
+        document.getElementById('username').textContent = localStorage.getItem('username');
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            localStorage.removeItem('username');
+            alert('Logged out successfully');
+            window.location.href = '/login.html';
+        });
+    </script>
+</body>
+</html>
